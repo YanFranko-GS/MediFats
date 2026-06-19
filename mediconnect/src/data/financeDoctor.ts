@@ -1,0 +1,267 @@
+// AUTO-GENERATED
+export const FINANCE_DOCTOR = [
+  {
+    "month": "2023-01",
+    "doctorId": "doc-001",
+    "revenue": 8266,
+    "consultations": 42,
+    "avgTicket": 160,
+    "cancellations": 4,
+    "videoconsultations": 7,
+    "newPatients": 5,
+    "recurringPatients": 31
+  },
+  {
+    "month": "2023-02",
+    "doctorId": "doc-001",
+    "revenue": 8265,
+    "consultations": 51,
+    "avgTicket": 190,
+    "cancellations": 5,
+    "videoconsultations": 17,
+    "newPatients": 9,
+    "recurringPatients": 45
+  },
+  {
+    "month": "2023-03",
+    "doctorId": "doc-001",
+    "revenue": 9262,
+    "consultations": 51,
+    "avgTicket": 136,
+    "cancellations": 3,
+    "videoconsultations": 12,
+    "newPatients": 8,
+    "recurringPatients": 46
+  },
+  {
+    "month": "2023-04",
+    "doctorId": "doc-001",
+    "revenue": 9784,
+    "consultations": 58,
+    "avgTicket": 155,
+    "cancellations": 7,
+    "videoconsultations": 11,
+    "newPatients": 3,
+    "recurringPatients": 55
+  },
+  {
+    "month": "2023-05",
+    "doctorId": "doc-001",
+    "revenue": 8969,
+    "consultations": 59,
+    "avgTicket": 154,
+    "cancellations": 3,
+    "videoconsultations": 8,
+    "newPatients": 12,
+    "recurringPatients": 48
+  },
+  {
+    "month": "2023-06",
+    "doctorId": "doc-001",
+    "revenue": 9995,
+    "consultations": 50,
+    "avgTicket": 136,
+    "cancellations": 7,
+    "videoconsultations": 13,
+    "newPatients": 12,
+    "recurringPatients": 38
+  },
+  {
+    "month": "2023-07",
+    "doctorId": "doc-001",
+    "revenue": 10006,
+    "consultations": 57,
+    "avgTicket": 184,
+    "cancellations": 7,
+    "videoconsultations": 7,
+    "newPatients": 5,
+    "recurringPatients": 52
+  },
+  {
+    "month": "2023-08",
+    "doctorId": "doc-001",
+    "revenue": 10742,
+    "consultations": 53,
+    "avgTicket": 130,
+    "cancellations": 8,
+    "videoconsultations": 8,
+    "newPatients": 11,
+    "recurringPatients": 46
+  },
+  {
+    "month": "2023-09",
+    "doctorId": "doc-001",
+    "revenue": 10850,
+    "consultations": 54,
+    "avgTicket": 133,
+    "cancellations": 7,
+    "videoconsultations": 11,
+    "newPatients": 10,
+    "recurringPatients": 42
+  },
+  {
+    "month": "2023-10",
+    "doctorId": "doc-001",
+    "revenue": 11117,
+    "consultations": 60,
+    "avgTicket": 153,
+    "cancellations": 8,
+    "videoconsultations": 5,
+    "newPatients": 5,
+    "recurringPatients": 57
+  },
+  {
+    "month": "2023-11",
+    "doctorId": "doc-001",
+    "revenue": 11935,
+    "consultations": 64,
+    "avgTicket": 147,
+    "cancellations": 2,
+    "videoconsultations": 5,
+    "newPatients": 10,
+    "recurringPatients": 54
+  },
+  {
+    "month": "2023-12",
+    "doctorId": "doc-001",
+    "revenue": 11691,
+    "consultations": 62,
+    "avgTicket": 145,
+    "cancellations": 5,
+    "videoconsultations": 9,
+    "newPatients": 10,
+    "recurringPatients": 53
+  },
+  {
+    "month": "2024-01",
+    "doctorId": "doc-001",
+    "revenue": 12962,
+    "consultations": 59,
+    "avgTicket": 139,
+    "cancellations": 5,
+    "videoconsultations": 15,
+    "newPatients": 5,
+    "recurringPatients": 50
+  },
+  {
+    "month": "2024-02",
+    "doctorId": "doc-001",
+    "revenue": 12280,
+    "consultations": 73,
+    "avgTicket": 132,
+    "cancellations": 4,
+    "videoconsultations": 9,
+    "newPatients": 6,
+    "recurringPatients": 65
+  },
+  {
+    "month": "2024-03",
+    "doctorId": "doc-001",
+    "revenue": 12427,
+    "consultations": 76,
+    "avgTicket": 151,
+    "cancellations": 2,
+    "videoconsultations": 10,
+    "newPatients": 9,
+    "recurringPatients": 65
+  },
+  {
+    "month": "2024-04",
+    "doctorId": "doc-001",
+    "revenue": 13465,
+    "consultations": 64,
+    "avgTicket": 151,
+    "cancellations": 7,
+    "videoconsultations": 13,
+    "newPatients": 12,
+    "recurringPatients": 54
+  },
+  {
+    "month": "2024-05",
+    "doctorId": "doc-001",
+    "revenue": 14374,
+    "consultations": 64,
+    "avgTicket": 186,
+    "cancellations": 4,
+    "videoconsultations": 14,
+    "newPatients": 8,
+    "recurringPatients": 52
+  },
+  {
+    "month": "2024-06",
+    "doctorId": "doc-001",
+    "revenue": 14586,
+    "consultations": 78,
+    "avgTicket": 183,
+    "cancellations": 5,
+    "videoconsultations": 14,
+    "newPatients": 12,
+    "recurringPatients": 73
+  },
+  {
+    "month": "2024-07",
+    "doctorId": "doc-001",
+    "revenue": 14530,
+    "consultations": 74,
+    "avgTicket": 144,
+    "cancellations": 3,
+    "videoconsultations": 9,
+    "newPatients": 5,
+    "recurringPatients": 67
+  },
+  {
+    "month": "2024-08",
+    "doctorId": "doc-001",
+    "revenue": 14742,
+    "consultations": 70,
+    "avgTicket": 190,
+    "cancellations": 5,
+    "videoconsultations": 15,
+    "newPatients": 12,
+    "recurringPatients": 60
+  },
+  {
+    "month": "2024-09",
+    "doctorId": "doc-001",
+    "revenue": 15229,
+    "consultations": 71,
+    "avgTicket": 179,
+    "cancellations": 5,
+    "videoconsultations": 17,
+    "newPatients": 5,
+    "recurringPatients": 59
+  },
+  {
+    "month": "2024-10",
+    "doctorId": "doc-001",
+    "revenue": 15564,
+    "consultations": 74,
+    "avgTicket": 183,
+    "cancellations": 6,
+    "videoconsultations": 12,
+    "newPatients": 7,
+    "recurringPatients": 63
+  },
+  {
+    "month": "2024-11",
+    "doctorId": "doc-001",
+    "revenue": 15830,
+    "consultations": 85,
+    "avgTicket": 142,
+    "cancellations": 6,
+    "videoconsultations": 15,
+    "newPatients": 8,
+    "recurringPatients": 82
+  },
+  {
+    "month": "2024-12",
+    "doctorId": "doc-001",
+    "revenue": 16804,
+    "consultations": 85,
+    "avgTicket": 136,
+    "cancellations": 3,
+    "videoconsultations": 18,
+    "newPatients": 8,
+    "recurringPatients": 73
+  }
+] as const;
