@@ -65,7 +65,7 @@ export default function PatientHistory() {
 
   return (
     <>
-      <Helmet><title>Historial Médico – Clínica Fast</title></Helmet>
+      <Helmet><title>Historial Médico – SmartSalud</title></Helmet>
       <PageHeader title={t('patientDashboard.viewHistory')} subtitle={t('patientDashboard.historyDesc')}
         breadcrumb={[{ label: t('patientDashboard.dashboard'), href: '/dashboard/patient' }, { label: t('patientDashboard.viewHistory') }]} />
 

@@ -75,7 +75,7 @@ export function Navbar() {
             <Stethoscope className="h-4.5 w-4.5 text-white" strokeWidth={2.5} />
           </div>
           <span className="font-display font-semibold text-lg text-ink-900 dark:text-slate-100 tracking-tight">
-            Clínica <span className="text-clinical-700 dark:text-clinical-300 italic">Fast</span>
+            Smart<span className="text-clinical-700 dark:text-clinical-300">Salud</span>
           </span>
         </Link>
 

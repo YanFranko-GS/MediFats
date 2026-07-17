@@ -112,6 +112,8 @@ export default function DoctorProfilePage() {
         mode: selectedMode,
         reason: 'Consulta médica',
         price: price,
+        paymentMethod: paymentMethod as any,
+        paymentVoucherUrl: paymentMethod === 'transfer' ? 'voucher_transferencia.jpg' : undefined,
       });
 
       await doctorService.blockDoctorSlot(doctor!.id, format(selectedDate, 'yyyy-MM-dd'), selectedTime!);
@@ -139,7 +141,7 @@ export default function DoctorProfilePage() {
   return (
     <>
       <Helmet>
-        <title>{doctor.name} – {doctor.specialty} | CLÍNICA FAST</title>
+        <title>{doctor.name} – {doctor.specialty} | SMARTSALUD</title>
         <meta name="description" content={`Reserva una cita con ${doctor.name}, especialista en ${doctor.specialty}.`} />
         <script type="application/ld+json">{JSON.stringify({
           "@context":"https://schema.org","@type":"Person",

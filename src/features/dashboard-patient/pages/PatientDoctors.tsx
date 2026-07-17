@@ -27,7 +27,7 @@ export default function PatientDoctors() {
 
   return (
     <>
-      <Helmet><title>Mis Médicos – Clínica Fast</title></Helmet>
+      <Helmet><title>Mis Médicos – SmartSalud</title></Helmet>
       <PageHeader title="Mis Médicos" subtitle="Especialistas con quienes has tenido consultas"
         breadcrumb={[{ label: t('patientDashboard.dashboard'), href: '/dashboard/patient' }, { label: 'Mis Médicos' }]} />
 

@@ -71,7 +71,7 @@ export default function PatientHome() {
 
   return (
     <>
-      <Helmet><title>Mi Dashboard – Clínica Fast</title></Helmet>
+      <Helmet><title>Mi Dashboard – SmartSalud</title></Helmet>
       <PageHeader
         title={t('dashboard.patientTitle', { name: user?.name.split(' ')[0] })}
         subtitle={t('dashboard.patientSubtitle')}

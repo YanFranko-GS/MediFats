@@ -16,7 +16,7 @@ export function Chatbot() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [unread, setUnread] = useState(0);
-  const [autoSpeak, setAutoSpeak] = useState(false);
+  const [autoSpeak, setAutoSpeak] = useState(true);
   const [suggestions, setSuggestions] = useState<string[]>([
     'Buscar un médico',
     'Reservar cita',

@@ -112,7 +112,7 @@ export default function PatientPrescriptions() {
               <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Pill className="h-5 w-5 text-white" />
               </div>
-              <p className="font-heading font-bold text-primary-600">Clínica Fast</p>
+              <p className="font-heading font-bold text-primary-600">SmartSalud</p>
               <p className="text-xs text-slate-400">{t('patientDashboard.digitalPrescription')}</p>
             </div>
             <div className="grid grid-cols-2 gap-3 text-sm mb-4">

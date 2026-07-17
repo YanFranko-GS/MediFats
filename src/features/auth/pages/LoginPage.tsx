@@ -62,8 +62,8 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title>Iniciar Sesión – CLÍNICA FAST</title>
-        <meta name="description" content="Accede a tu cuenta de CLÍNICA FAST para gestionar tus citas médicas." />
+        <title>Iniciar Sesión – SMARTSALUD</title>
+        <meta name="description" content="Accede a tu cuenta de SMARTSALUD para gestionar tus citas médicas." />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex">
@@ -79,7 +79,7 @@ export default function LoginPage() {
             <div className="w-9 h-9 bg-white/20 rounded-xl flex items-center justify-center">
               <Stethoscope className="h-5 w-5 text-white" />
             </div>
-            <span className="font-heading font-bold text-xl text-white">CLÍNICA FAST</span>
+            <span className="font-heading font-bold text-xl text-white">SMARTSALUD</span>
           </Link>
 
           <div className="relative z-10 space-y-6">
@@ -107,7 +107,7 @@ export default function LoginPage() {
           </div>
 
           <p className="text-primary-200 text-sm relative z-10">
-            © 2025 CLÍNICA FAST · La plataforma de salud de confianza
+            © 2025 SMARTSALUD · La plataforma de salud de confianza
           </p>
         </div>
 

@@ -123,6 +123,7 @@ export default function PatientProfile() {
           <span className="inline-flex mt-3 px-3 py-1 bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 text-xs font-semibold rounded-full">{t('patientDashboard.patient')}</span>
           <div className="mt-5 pt-5 border-t border-surface-100 dark:border-slate-800 space-y-3 text-sm">
             {[
+              { icon: <User className="h-3.5 w-3.5 text-blue-500" />, label: 'DNI', value: (form as any).dni || 'No especificado' },
               { icon: <Droplet className="h-3.5 w-3.5 text-red-500" />, label: 'Tipo de sangre', value: form.bloodType },
               { icon: <Calendar className="h-3.5 w-3.5 text-primary-500" />, label: 'Fecha de nac.', value: form.birthDate },
               { icon: <MapPin className="h-3.5 w-3.5 text-slate-400" />, label: 'Dirección', value: form.address },
@@ -144,6 +145,7 @@ export default function PatientProfile() {
           <div className="card p-6">
             <h3 className="font-semibold text-slate-800 dark:text-slate-100 mb-5 flex items-center gap-2 text-sm"><User className="h-4 w-4 text-primary-600" />Información personal</h3>
             <div className="grid sm:grid-cols-2 gap-4">
+              <Field label="DNI" icon={<User className="h-3.5 w-3.5" />} field={'dni' as any} type="text" />
               <Field label="Teléfono" icon={<Phone className="h-3.5 w-3.5" />} field="phone" type="tel" />
               <Field label="Dirección" icon={<MapPin className="h-3.5 w-3.5" />} field="address" />
               <Field label="Tipo de sangre" icon={<Droplet className="h-3.5 w-3.5" />} field="bloodType" options={BLOOD_TYPES} />

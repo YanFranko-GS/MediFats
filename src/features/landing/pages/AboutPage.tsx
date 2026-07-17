@@ -56,7 +56,7 @@ const TEAM = [
 ];
 
 const TESTIMONIALS = [
-  { name: 'Lucía Ramírez', role: 'Paciente de Dermatología', avatar: 'lucia-ramirez', text: 'Gracias a CLÍNICA FAST encontré al especialista que necesitaba en minutos. La atención fue excelente y todo muy fácil de usar.' },
+  { name: 'Lucía Ramírez', role: 'Paciente de Dermatología', avatar: 'lucia-ramirez', text: 'Gracias a SMARTSALUD encontré al especialista que necesitaba en minutos. La atención fue excelente y todo muy fácil de usar.' },
   { name: 'Carlos Mendoza', role: 'Paciente de Cardiología', avatar: 'carlos-mendoza', text: 'Excelente plataforma, me ahorra tiempo y me da la confianza saber que los médicos están verificados.' },
   { name: 'María López', role: 'Paciente de Pediatría', avatar: 'maria-lopez', text: 'Pude reservar la cita para mi hija sin salir de casa. La atención pediátrica fue maravillosa.' },
 ];
@@ -69,8 +69,8 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>Sobre Nosotros – Clínica Fast</title>
-        <meta name="description" content="Conoce la misión, historia y equipo de Clínica Fast, la plataforma de reservas médicas líder en Perú." />
+        <title>Sobre Nosotros – SmartSalud</title>
+        <meta name="description" content="Conoce la misión, historia y equipo de SmartSalud, la plataforma de reservas médicas líder en Perú." />
       </Helmet>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
@@ -80,13 +80,13 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="eyebrow mb-4">Sobre Clínica Fast</span>
+              <span className="eyebrow mb-4">Sobre SmartSalud</span>
               <h1 className="font-display text-4xl lg:text-[3.2rem] font-semibold text-ink-900 dark:text-white leading-[1.08] tracking-tight mb-5">
                 Conectamos personas<br />
                 con la mejor <span className="italic text-clinical-700 dark:text-clinical-300">atención<br />médica</span>
               </h1>
               <p className="text-ink-500 dark:text-slate-400 leading-relaxed mb-7 max-w-md text-lg">
-                En Clínica Fast creemos que la salud de calidad debe ser accesible, rápida y confiable para todos.
+                En SmartSalud creemos que la salud de calidad debe ser accesible, rápida y confiable para todos.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 Nacimos para <span className="italic text-clinical-700 dark:text-clinical-300">transformar</span><br />la experiencia en salud
               </h2>
               <p className="text-ink-500 dark:text-slate-400 leading-relaxed mb-3 text-sm">
-                Clínica Fast nació en el 2022 con una misión clara: eliminar las barreras entre las personas y la atención médica de calidad.
+                SmartSalud nació en el 2022 con una misión clara: eliminar las barreras entre las personas y la atención médica de calidad.
               </p>
               <p className="text-ink-500 dark:text-slate-400 leading-relaxed mb-3 text-sm">
                 Sabemos que tu tiempo es valioso y tu salud es lo más importante. Por eso creamos una plataforma intuitiva, segura y confiable que te permite encontrar especialistas, reservar citas y recibir atención de forma rápida y sin complicaciones.

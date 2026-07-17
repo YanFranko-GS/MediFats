@@ -8,11 +8,13 @@ import { Button } from '../../../shared/components/atoms/Button';
 import { APPOINTMENTS } from '../../../data/appointments';
 import { formatDate, formatCurrency, cn } from '../../../shared/utils';
 import { toast } from 'sonner';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { appointmentService } from '../../../shared/services/appointmentService';
 
 interface Props { filter?: string; view?: string; }
 
-const ALL = (APPOINTMENTS as unknown as any[]).slice(0, 200);
 const STATUS_CFG: Record<string,{label:string;variant:any}> = {
+  pending_approval: { label:'Pago Pendiente', variant:'warning' },
   scheduled:  { label:'Programada', variant:'primary' },
   completed:  { label:'Completada', variant:'success' },
   cancelled:  { label:'Cancelada',  variant:'error' },
@@ -20,7 +22,7 @@ const STATUS_CFG: Record<string,{label:string;variant:any}> = {
   rescheduled:{ label:'Reprogramada',variant:'secondary' },
 };
 
-function AppointmentModal({ appt, onClose }: { appt: any; onClose: () => void }) {
+function AppointmentModal({ appt, onClose, onApprove }: { appt: any; onClose: () => void; onApprove: () => void }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={onClose}>
       <motion.div initial={{opacity:0,scale:0.95}} animate={{opacity:1,scale:1}} exit={{opacity:0,scale:0.95}}
@@ -31,8 +33,9 @@ function AppointmentModal({ appt, onClose }: { appt: any; onClose: () => void })
         </div>
         <div className="p-5 space-y-3">
           {[
-            ['Paciente', appt.patientName], ['Médico', appt.doctorName], ['Especialidad', appt.specialty],
-            ['Fecha', formatDate(appt.date)], ['Hora', appt.time], ['Modalidad', appt.type === 'online' ? 'Teleconsulta' : 'Presencial'],
+            ['Paciente', appt.patientName], ['Médico', appt.doctorName], ['Especialidad', appt.doctorSpecialty || appt.specialty],
+            ['Fecha', formatDate(appt.date)], ['Hora', appt.time], ['Modalidad', appt.type === 'online' || appt.mode === 'video' ? 'Teleconsulta' : 'Presencial'],
+            ['Método de Pago', appt.paymentMethod === 'card' ? 'Tarjeta' : appt.paymentMethod === 'yape' ? 'Yape / Plin' : appt.paymentMethod === 'transfer' ? 'Transferencia Bancaria' : 'N/A'],
             ['Monto', formatCurrency(appt.price)], ['Estado', STATUS_CFG[appt.status]?.label || appt.status],
           ].map(([k,v]) => (
             <div key={k} className="flex justify-between text-sm py-1.5 border-b border-surface-100 dark:border-slate-800 last:border-0">
@@ -40,12 +43,25 @@ function AppointmentModal({ appt, onClose }: { appt: any; onClose: () => void })
               <span className="font-medium text-slate-800 dark:text-slate-100">{v}</span>
             </div>
           ))}
+          {appt.paymentVoucherUrl && (
+            <div className="flex justify-between text-sm py-1.5 border-b border-surface-100 dark:border-slate-800 last:border-0">
+              <span className="text-slate-500">Comprobante</span>
+              <a href="#" onClick={e=>e.preventDefault()} className="font-medium text-primary-600 underline">{appt.paymentVoucherUrl}</a>
+            </div>
+          )}
         </div>
         <div className="p-5 border-t border-surface-200 dark:border-slate-800 flex gap-2 justify-end">
-          <Button size="sm" variant="outline" onClick={() => { toast.success('Cita reprogramada'); onClose(); }}>
-            <RotateCcw className="h-3.5 w-3.5 mr-1"/>Reprogramar
-          </Button>
-          {appt.status === 'scheduled' && (
+          {appt.status === 'pending_approval' && (
+            <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white border-green-600" onClick={onApprove}>
+              <CheckCircle className="h-3.5 w-3.5 mr-1"/> Se procede el pago
+            </Button>
+          )}
+          {appt.status !== 'pending_approval' && (
+            <Button size="sm" variant="outline" onClick={() => { toast.success('Cita reprogramada'); onClose(); }}>
+              <RotateCcw className="h-3.5 w-3.5 mr-1"/>Reprogramar
+            </Button>
+          )}
+          {(appt.status === 'scheduled' || appt.status === 'pending_approval') && (
             <Button size="sm" variant="outline" className="text-red-600 border-red-300" onClick={() => { toast.success('Cita cancelada'); onClose(); }}>
               <XCircle className="h-3.5 w-3.5 mr-1"/>Cancelar
             </Button>
@@ -57,6 +73,14 @@ function AppointmentModal({ appt, onClose }: { appt: any; onClose: () => void })
 }
 
 export default function AdminAppointments({ filter, view }: Props) {
+  const queryClient = useQueryClient();
+  const { data: result, isLoading } = useQuery({
+    queryKey: ['admin-appointments'],
+    queryFn: () => appointmentService.getAll(1, 1000)
+  });
+  
+  const ALL = result?.items || [];
+
   const [q, setQ] = useState('');
   const [status, setStatus] = useState(filter || 'all');
   const [specialty, setSpecialty] = useState('all');
@@ -64,13 +88,22 @@ export default function AdminAppointments({ filter, view }: Props) {
   const [page, setPage] = useState(1);
   const PAGE = 15;
 
-  const specialties = useMemo(() => [...new Set(ALL.map((a:any) => a.specialty))].sort(), []);
+  const approvePayment = useMutation({
+    mutationFn: (id: string) => appointmentService.approvePayment(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['admin-appointments'] });
+      toast.success('Pago aprobado. Cita programada oficialmente.');
+      setSelected(null);
+    }
+  });
+
+  const specialties = useMemo(() => [...new Set(ALL.map((a:any) => a.doctorSpecialty || a.specialty).filter(Boolean))].sort(), [ALL]);
 
   const filtered = useMemo(() => ALL.filter((a:any) =>
     (status === 'all' || a.status === status) &&
-    (specialty === 'all' || a.specialty === specialty) &&
+    (specialty === 'all' || (a.doctorSpecialty || a.specialty) === specialty) &&
     (a.patientName?.toLowerCase().includes(q.toLowerCase()) || a.doctorName?.toLowerCase().includes(q.toLowerCase()))
-  ), [q, status, specialty]);
+  ), [q, status, specialty, ALL]);
 
   const pages = Math.ceil(filtered.length / PAGE);
   const visible = filtered.slice((page-1)*PAGE, page*PAGE);
@@ -80,7 +113,7 @@ export default function AdminAppointments({ filter, view }: Props) {
     scheduled: ALL.filter((a:any)=>a.status==='scheduled').length,
     completed: ALL.filter((a:any)=>a.status==='completed').length,
     cancelled: ALL.filter((a:any)=>a.status==='cancelled').length,
-  }), []);
+  }), [ALL]);
 
   const titleMap: Record<string,string> = { rescheduled:'Reprogramaciones', cancelled:'Cancelaciones', agenda:'Agenda Global' };
   const title = view ? 'Agenda Global' : filter ? (titleMap[filter] || 'Gestión de Citas') : 'Gestión de Citas';
@@ -132,7 +165,7 @@ export default function AdminAppointments({ filter, view }: Props) {
                   <td className="px-4 py-3 font-mono text-xs text-slate-500">#{a.id?.slice(-4)}</td>
                   <td className="px-4 py-3 font-medium text-slate-800 dark:text-slate-100">{a.patientName}</td>
                   <td className="px-4 py-3 text-slate-600 dark:text-slate-400 hidden md:table-cell">{a.doctorName}</td>
-                  <td className="px-4 py-3 hidden lg:table-cell"><Badge variant="outline" size="sm">{a.specialty}</Badge></td>
+                  <td className="px-4 py-3 hidden lg:table-cell"><Badge variant="outline" size="sm">{a.doctorSpecialty || a.specialty}</Badge></td>
                   <td className="px-4 py-3 text-slate-600 dark:text-slate-400 text-xs">{formatDate(a.date)} {a.time}</td>
                   <td className="px-4 py-3"><Badge variant={STATUS_CFG[a.status]?.variant||'default'} size="sm" dot>{STATUS_CFG[a.status]?.label||a.status}</Badge></td>
                   <td className="px-4 py-3 font-medium text-slate-700 dark:text-slate-300 hidden lg:table-cell">{formatCurrency(a.price)}</td>
@@ -155,7 +188,7 @@ export default function AdminAppointments({ filter, view }: Props) {
           </div>
         )}
       </div>
-      <AnimatePresence>{selected && <AppointmentModal appt={selected} onClose={()=>setSelected(null)}/>}</AnimatePresence>
+      <AnimatePresence>{selected && <AppointmentModal appt={selected} onClose={()=>setSelected(null)} onApprove={() => approvePayment.mutate(selected.id)} />}</AnimatePresence>
     </>
   );
 }

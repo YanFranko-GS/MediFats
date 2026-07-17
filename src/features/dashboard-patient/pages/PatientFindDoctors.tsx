@@ -34,7 +34,7 @@ export default function PatientFindDoctors() {
 
   return (
     <>
-      <Helmet><title>Buscar Médicos – Clínica Fast</title></Helmet>
+      <Helmet><title>Buscar Médicos – SmartSalud</title></Helmet>
       <PageHeader title="Buscar Médicos" subtitle="Encuentra tu especialista ideal"
         breadcrumb={[{ label: t('patientDashboard.dashboard'), href: '/dashboard/patient' }, { label: 'Buscar Médicos' }]} />
 

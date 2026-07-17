@@ -13,10 +13,20 @@ const EPS_LIST = ['EsSalud', 'RIMAC', 'Pacífico', 'La Positiva', 'Mapfre', 'SIS
 
 const registerSchema = z.object({
   fullName: z.string().min(3, 'El nombre debe tener al menos 3 caracteres'),
+  dni: z.string().regex(/^\d{8}$/, 'El DNI debe tener exactamente 8 dígitos numéricos'),
   phone: z.string().regex(/^\+?[\d\s-]{9,}$/, 'Número de teléfono inválido'),
   address: z.string().min(5, 'La dirección es muy corta'),
   bloodType: z.enum(BLOOD_TYPES, { message: 'Selecciona un tipo de sangre' }),
-  birthDate: z.string().min(1, 'Selecciona tu fecha de nacimiento'),
+  birthDate: z.string().min(1, 'Selecciona tu fecha de nacimiento').refine((dateString) => {
+    const today = new Date();
+    const birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age >= 18;
+  }, 'Debes ser mayor de 18 años para registrarte'),
   email: z.string().email('Correo electrónico inválido'),
   eps: z.enum(EPS_LIST, { message: 'Selecciona una EPS' }),
   affiliateNum: z.string().min(3, 'Número de afiliado inválido'),
@@ -92,6 +102,12 @@ export default function RegisterPage() {
                       <label className="label-base">Nombre completo</label>
                       <input type="text" placeholder="Ej: María López" className={`input-base ${errors.fullName ? 'border-red-400' : ''}`} {...register('fullName')} />
                       {errors.fullName && <p className="mt-1 text-xs text-red-500">{errors.fullName.message}</p>}
+                    </div>
+
+                    <div>
+                      <label className="label-base flex items-center gap-1.5"><User className="h-3.5 w-3.5 text-slate-400" /> DNI</label>
+                      <input type="text" placeholder="Ej: 71234567" className={`input-base ${errors.dni ? 'border-red-400' : ''}`} {...register('dni')} maxLength={8} />
+                      {errors.dni && <p className="mt-1 text-xs text-red-500">{errors.dni.message}</p>}
                     </div>
 
                     <div>

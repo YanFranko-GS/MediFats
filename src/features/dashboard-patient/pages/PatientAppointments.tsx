@@ -54,7 +54,7 @@ export default function PatientAppointments() {
 
   return (
     <>
-      <Helmet><title>Mis Citas – Clínica Fast</title></Helmet>
+      <Helmet><title>Mis Citas – SmartSalud</title></Helmet>
       <PageHeader title={t('patientDashboard.myAppointments')} subtitle={t('patientDashboard.historyDesc')}
         action={<Link to="/doctors" className="btn-primary flex items-center gap-2 text-sm"><Plus className="h-4 w-4" /> {t('patientDashboard.newAppointment')}</Link>}
         breadcrumb={[{ label: t('patientDashboard.dashboard'), href: '/dashboard/patient' }, { label: t('patientDashboard.myAppointments') }]} />

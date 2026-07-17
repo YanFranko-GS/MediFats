@@ -112,7 +112,7 @@ export default function SpecialtiesPage() {
   return (
     <>
       <Helmet>
-        <title>Especialidades Médicas – Clínica Fast</title>
+        <title>Especialidades Médicas – SmartSalud</title>
         <meta name="description" content="Explora más de 20 especialidades médicas y encuentra el especialista que necesitas." />
       </Helmet>
 

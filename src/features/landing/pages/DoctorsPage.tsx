@@ -69,7 +69,7 @@ export default function DoctorsPage() {
   return (
     <>
       <Helmet>
-        <title>Médicos Especialistas – Clínica Fast</title>
+        <title>Médicos Especialistas – SmartSalud</title>
         <meta name="description" content="Encuentra y reserva cita con más de 100 médicos especialistas certificados." />
       </Helmet>
 

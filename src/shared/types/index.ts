@@ -10,6 +10,7 @@ export interface User {
   role: UserRole;
   avatar: string;
   phone?: string;
+  dni?: string;
   createdAt: string;
   lastLogin: string;
 }
@@ -79,7 +80,7 @@ export interface Specialty {
 
 // ─── APPOINTMENT ────────────────────────────────────────────────────────────
 
-export type AppointmentStatus = 'scheduled' | 'completed' | 'cancelled' | 'no-show' | 'rescheduled';
+export type AppointmentStatus = 'scheduled' | 'completed' | 'cancelled' | 'no-show' | 'rescheduled' | 'pending_approval';
 export type ConsultationMode = 'in-person' | 'video' | 'chat';
 
 export interface Appointment {
@@ -99,6 +100,8 @@ export interface Appointment {
   reason: string;
   notes?: string;
   price: number;
+  paymentMethod?: 'card' | 'yape' | 'transfer';
+  paymentVoucherUrl?: string;
   createdAt: string;
   cancelReason?: string;
 }

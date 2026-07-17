@@ -20,7 +20,7 @@ interface GrokMessage {
 const XAI_BASE_URL = 'https://api.x.ai/v1';
 const GROK_MODEL = 'grok-3-mini-fast';
 
-const SYSTEM_PROMPT = `Eres **MediBot**, el asistente virtual oficial de **Smart Salud** (anteriormente conocido como Clínica Fast / MediConnect). Tu ÚNICA misión es ayudar a los usuarios con todo lo relacionado a esta plataforma médica.
+const SYSTEM_PROMPT = `Eres **MediBot**, el asistente virtual oficial de **Smart Salud** (anteriormente conocido como SmartSalud / MediConnect). Tu ÚNICA misión es ayudar a los usuarios con todo lo relacionado a esta plataforma médica.
 
 ## TU PERSONALIDAD
 - Eres amigable, cálido, profesional y empático.

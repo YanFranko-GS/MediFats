@@ -33,7 +33,7 @@ export default function PatientNotifications() {
 
   return (
     <>
-      <Helmet><title>Notificaciones – Clínica Fast</title></Helmet>
+      <Helmet><title>Notificaciones – SmartSalud</title></Helmet>
       <PageHeader title="Notificaciones" subtitle={`${unreadCount} sin leer`}
         action={
           <button onClick={() => markAll.mutate()} disabled={markAll.isPending || unreadCount === 0}

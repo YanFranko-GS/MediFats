@@ -81,7 +81,7 @@ export default function DoctorHome() {
 
   return (
     <>
-      <Helmet><title>Dashboard Médico – Clínica Fast</title></Helmet>
+      <Helmet><title>Dashboard Médico – SmartSalud</title></Helmet>
       <PageHeader
         title={`${t('dashboard.doctorPanel')} · ${user?.name?.split(' ').slice(0, 2).join(' ')}`}
         subtitle={format(now, "EEEE, dd MMMM yyyy", { locale: es })}

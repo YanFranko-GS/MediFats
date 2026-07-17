@@ -61,7 +61,7 @@ export default function PatientHealth() {
 
   return (
     <>
-      <Helmet><title>Mi Salud – Clínica Fast</title></Helmet>
+      <Helmet><title>Mi Salud – SmartSalud</title></Helmet>
       <PageHeader title="Mi Salud" subtitle="Panel de métricas de salud personal"
         action={
           <div className="flex gap-1.5">

@@ -105,6 +105,20 @@ export const appointmentService = {
     }, { delay: 700 })).data;
   },
 
+  async approvePayment(id: string): Promise<Appointment> {
+    return (await apiClient(() => {
+      const store = getStore();
+      const idx = store.findIndex((a) => a.id === id);
+      if (idx === -1) throw new Error('Cita no encontrada');
+      store[idx] = {
+        ...store[idx],
+        status: 'scheduled',
+      };
+      saveAppointments(store);
+      return store[idx];
+    }, { delay: 400 })).data;
+  },
+
   async getAll(page = 1, pageSize = 20): Promise<{ items: Appointment[]; total: number }> {
     return (await apiClient(() => {
       const store = getStore();

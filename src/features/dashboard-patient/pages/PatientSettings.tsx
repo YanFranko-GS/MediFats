@@ -67,7 +67,7 @@ export default function PatientSettings() {
   return (
     <>
       <Helmet><title>{t('patientDashboard.settingsTitle')}</title></Helmet>
-      <PageHeader title="Configuración" subtitle="Personaliza tu experiencia en Clínica Fast"
+      <PageHeader title="Configuración" subtitle="Personaliza tu experiencia en SmartSalud"
         breadcrumb={[{ label: t('patientDashboard.dashboard'), href: '/dashboard/patient' }, { label: 'Configuración' }]} />
 
       <div className="grid lg:grid-cols-2 gap-5">

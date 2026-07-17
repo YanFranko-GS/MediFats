@@ -58,7 +58,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       <OfflineBanner />
       <div className="md:hidden flex items-center justify-between p-4 bg-white dark:bg-slate-950 border-b border-surface-200 dark:border-slate-800">
         <span className="font-heading font-bold text-lg text-slate-800 dark:text-slate-100">
-          CLÍNICA <span className="text-primary-600">FAST</span>
+          SMART<span className="text-primary-600">SALUD</span>
         </span>
         <button onClick={toggleSidebar} className="p-2 -mr-2 text-slate-600 dark:text-slate-400">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,7 +86,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div>
             <h3 className="font-display font-semibold text-xl text-white mb-3 tracking-tight">
-              Clínica <span className="text-vital-400 italic">Fast</span>
+              Smart<span className="text-vital-400">Salud</span>
             </h3>
             <p className="text-sm text-clinical-200">
               {t('footer.description')}
@@ -134,7 +134,7 @@ function Footer() {
           ))}
         </div>
         <div className="border-t border-clinical-700/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-clinical-300">© 2025 Clínica Fast. {t('footer.rights')}.</p>
+          <p className="text-xs text-clinical-300">© 2025 SmartSalud. {t('footer.rights')}.</p>
           <p className="text-xs text-clinical-300 flex items-center gap-1">{t('footer.madeWith')} <Heart className="h-3 w-3 fill-vital-500 text-vital-500"/> {t('footer.forPeru')}</p>
         </div>
       </div>

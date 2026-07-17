@@ -20,7 +20,7 @@ export default function DoctorStats() {
 
   return (
     <>
-      <Helmet><title>Mis Estadísticas – Clínica Fast</title></Helmet>
+      <Helmet><title>Mis Estadísticas – SmartSalud</title></Helmet>
       <PageHeader title="Estadísticas" subtitle="Tu rendimiento en la plataforma"
         breadcrumb={[{ label: 'Dashboard Médico', href: '/dashboard/doctor' }, { label: 'Estadísticas' }]} />
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">

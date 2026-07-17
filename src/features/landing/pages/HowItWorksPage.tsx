@@ -74,7 +74,7 @@ const STATS = [
 ];
 
 const FAQS = [
-  { q: '¿Es gratis registrarse en Clínica Fast?', a: 'Sí, el registro como paciente es completamente gratuito. Solo pagas por las consultas que reserves, sin mensualidades ni costos ocultos.' },
+  { q: '¿Es gratis registrarse en SmartSalud?', a: 'Sí, el registro como paciente es completamente gratuito. Solo pagas por las consultas que reserves, sin mensualidades ni costos ocultos.' },
   { q: '¿Cómo sé que los médicos son confiables?', a: 'Todos los médicos pasan por un proceso de verificación de credenciales que incluye título médico, especialidad certificada y registro en el Colegio Médico.' },
   { q: '¿Puedo cancelar una cita?', a: 'Sí. Puedes cancelar hasta 24 horas antes de la consulta sin costo. Cancelaciones tardías pueden aplicar una penalidad del 50% del valor de la consulta.' },
   { q: '¿Las teleconsultas son igual de efectivas?', a: 'Para muchas consultas, sí. Las teleconsultas son ideales para seguimientos, consultas de resultados, prescripciones de renovación y evaluación de síntomas leves.' },
@@ -105,8 +105,8 @@ export default function HowItWorksPage() {
   return (
     <>
       <Helmet>
-        <title>Cómo Funciona – Clínica Fast</title>
-        <meta name="description" content="Aprende cómo reservar tu cita médica en Clínica Fast en 4 simples pasos. Rápido, seguro y fácil." />
+        <title>Cómo Funciona – SmartSalud</title>
+        <meta name="description" content="Aprende cómo reservar tu cita médica en SmartSalud en 4 simples pasos. Rápido, seguro y fácil." />
       </Helmet>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}

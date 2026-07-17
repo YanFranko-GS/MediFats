@@ -122,7 +122,7 @@ export default function LandingPage() {
   return (
     <>
       <Helmet>
-        <title>CLÍNICA FAST – Reserva Inteligente de Citas Médicas</title>
+        <title>SMARTSALUD – Reserva Inteligente de Citas Médicas</title>
         <meta name="description" content="Reserva tu cita médica de forma rápida, fácil y segura. Médicos especializados, atención de calidad y a un clic de distancia." />
       </Helmet>
 

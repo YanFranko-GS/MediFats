@@ -105,7 +105,7 @@ export default function PatientAssistant() {
 
   return (
     <>
-      <Helmet><title>Asistente IA – Clínica Fast</title></Helmet>
+      <Helmet><title>Asistente IA – SmartSalud</title></Helmet>
       <PageHeader title="Asistente de Salud IA" subtitle="Tu asistente personal con contexto de tu historial médico"
         breadcrumb={[{ label: t('patientDashboard.dashboard'), href: '/dashboard/patient' }, { label: 'Asistente IA' }]} />
 

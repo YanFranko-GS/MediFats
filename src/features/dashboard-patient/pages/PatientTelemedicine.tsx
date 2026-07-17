@@ -39,7 +39,7 @@ export default function PatientTelemedicine() {
 
   return (
     <>
-      <Helmet><title>Teleconsultas – Clínica Fast</title></Helmet>
+      <Helmet><title>Teleconsultas – SmartSalud</title></Helmet>
       <PageHeader title="Teleconsultas" subtitle="Tus consultas médicas virtuales"
         action={<Link to="/dashboard/patient/find-doctors" className="btn-primary flex items-center gap-2 text-sm"><Video className="h-4 w-4" />Reservar teleconsulta</Link>}
         breadcrumb={[{ label: t('patientDashboard.dashboard'), href: '/dashboard/patient' }, { label: 'Teleconsultas' }]} />
