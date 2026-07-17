@@ -38,14 +38,22 @@ function PageLoader() {
 }
 
 export default function App() {
-  const { theme } = useUIStore();
+  const { theme, fontSize } = useUIStore();
 
   React.useEffect(() => {
     const root = document.documentElement;
     root.classList.remove('dark', 'high-contrast');
     if (theme === 'dark') root.classList.add('dark');
     if (theme === 'high-contrast') root.classList.add('high-contrast');
-  }, [theme]);
+
+    const sizes: Record<string, string> = {
+      sm: '14px',
+      md: '16px',
+      lg: '18px',
+      xl: '20px',
+    };
+    root.style.fontSize = sizes[fontSize] || '16px';
+  }, [theme, fontSize]);
 
   return (
     <HelmetProvider>

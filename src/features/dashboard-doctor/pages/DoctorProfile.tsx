@@ -124,8 +124,8 @@ export default function DoctorProfile() {
               <div>
                 <label className="label-base">Precio por consulta (S/)</label>
                 {editing ? (
-                  <input type="number" value={form.price} onChange={e => setForm(f => ({ ...f, price: Number(e.target.value) }))} className="input-base" min={0} />
-                ) : <p className="text-sm text-slate-700 dark:text-slate-300 py-2.5 px-3.5 bg-surface-50 dark:bg-slate-800 rounded-lg">${profile.price}</p>}
+                  <input type="number" value={form.price} disabled className="input-base bg-surface-100 dark:bg-slate-800 text-slate-500 cursor-not-allowed" />
+                ) : <p className="text-sm text-slate-700 dark:text-slate-300 py-2.5 px-3.5 bg-surface-50 dark:bg-slate-800 rounded-lg">S/ {profile.price}</p>}
               </div>
               <div className="sm:col-span-2">
                 <label className="label-base">Biografía profesional</label>

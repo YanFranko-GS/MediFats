@@ -10,7 +10,7 @@ export const DOCTORS = [
     "specialtyId": "sp-001",
     "subSpecialty": "Sub-especialidad en Cardiología",
     "experience": 20,
-    "price": 159,
+    "price": 80,
     "rating": 4,
     "reviewCount": 110,
     "languages": [
@@ -460,7 +460,7 @@ export const DOCTORS = [
     "specialtyId": "sp-002",
     "subSpecialty": "Sub-especialidad en Dermatología",
     "experience": 17,
-    "price": 92,
+    "price": 80,
     "rating": 4.5,
     "reviewCount": 175,
     "languages": [
@@ -905,7 +905,7 @@ export const DOCTORS = [
     "specialty": "Neurología",
     "specialtyId": "sp-003",
     "experience": 30,
-    "price": 162,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 38,
     "languages": [
@@ -1351,7 +1351,7 @@ export const DOCTORS = [
     "specialty": "Pediatría",
     "specialtyId": "sp-004",
     "experience": 16,
-    "price": 326,
+    "price": 80,
     "rating": 3.8,
     "reviewCount": 81,
     "languages": [
@@ -1798,7 +1798,7 @@ export const DOCTORS = [
     "specialty": "Ginecología",
     "specialtyId": "sp-005",
     "experience": 18,
-    "price": 342,
+    "price": 80,
     "rating": 4,
     "reviewCount": 220,
     "languages": [
@@ -2245,7 +2245,7 @@ export const DOCTORS = [
     "specialty": "Oftalmología",
     "specialtyId": "sp-006",
     "experience": 28,
-    "price": 133,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 24,
     "languages": [
@@ -2693,7 +2693,7 @@ export const DOCTORS = [
     "specialtyId": "sp-007",
     "subSpecialty": "Sub-especialidad en Traumatología",
     "experience": 26,
-    "price": 156,
+    "price": 80,
     "rating": 4.2,
     "reviewCount": 157,
     "languages": [
@@ -3139,7 +3139,7 @@ export const DOCTORS = [
     "specialty": "Oncología",
     "specialtyId": "sp-008",
     "experience": 30,
-    "price": 133,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 13,
     "languages": [
@@ -3584,7 +3584,7 @@ export const DOCTORS = [
     "specialty": "Endocrinología",
     "specialtyId": "sp-009",
     "experience": 24,
-    "price": 177,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 43,
     "languages": [
@@ -4031,7 +4031,7 @@ export const DOCTORS = [
     "specialtyId": "sp-010",
     "subSpecialty": "Sub-especialidad en Psiquiatría",
     "experience": 4,
-    "price": 168,
+    "price": 80,
     "rating": 4.2,
     "reviewCount": 208,
     "languages": [
@@ -4478,7 +4478,7 @@ export const DOCTORS = [
     "specialty": "Urología",
     "specialtyId": "sp-011",
     "experience": 6,
-    "price": 286,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 162,
     "languages": [
@@ -4925,7 +4925,7 @@ export const DOCTORS = [
     "specialtyId": "sp-012",
     "subSpecialty": "Sub-especialidad en Gastroenterología",
     "experience": 14,
-    "price": 109,
+    "price": 80,
     "rating": 3.8,
     "reviewCount": 20,
     "languages": [
@@ -5371,7 +5371,7 @@ export const DOCTORS = [
     "specialtyId": "sp-013",
     "subSpecialty": "Sub-especialidad en Neumología",
     "experience": 28,
-    "price": 191,
+    "price": 80,
     "rating": 4.1,
     "reviewCount": 215,
     "languages": [
@@ -5817,7 +5817,7 @@ export const DOCTORS = [
     "specialty": "Reumatología",
     "specialtyId": "sp-014",
     "experience": 7,
-    "price": 299,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 182,
     "languages": [
@@ -6266,7 +6266,7 @@ export const DOCTORS = [
     "specialtyId": "sp-015",
     "subSpecialty": "Sub-especialidad en Nefrología",
     "experience": 27,
-    "price": 298,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 253,
     "languages": [
@@ -6713,7 +6713,7 @@ export const DOCTORS = [
     "specialty": "Hematología",
     "specialtyId": "sp-016",
     "experience": 14,
-    "price": 313,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 13,
     "languages": [
@@ -7159,7 +7159,7 @@ export const DOCTORS = [
     "specialty": "Infectología",
     "specialtyId": "sp-017",
     "experience": 6,
-    "price": 335,
+    "price": 80,
     "rating": 4.2,
     "reviewCount": 98,
     "languages": [
@@ -7606,7 +7606,7 @@ export const DOCTORS = [
     "specialty": "Medicina General",
     "specialtyId": "sp-018",
     "experience": 30,
-    "price": 148,
+    "price": 80,
     "rating": 5,
     "reviewCount": 145,
     "languages": [
@@ -8052,7 +8052,7 @@ export const DOCTORS = [
     "specialty": "Otorrinolaringología",
     "specialtyId": "sp-019",
     "experience": 20,
-    "price": 93,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 86,
     "languages": [
@@ -8498,7 +8498,7 @@ export const DOCTORS = [
     "specialty": "Cirugía General",
     "specialtyId": "sp-020",
     "experience": 16,
-    "price": 145,
+    "price": 80,
     "rating": 5,
     "reviewCount": 192,
     "languages": [
@@ -8944,7 +8944,7 @@ export const DOCTORS = [
     "specialty": "Cardiología",
     "specialtyId": "sp-001",
     "experience": 13,
-    "price": 251,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 156,
     "languages": [
@@ -9391,7 +9391,7 @@ export const DOCTORS = [
     "specialtyId": "sp-002",
     "subSpecialty": "Sub-especialidad en Dermatología",
     "experience": 8,
-    "price": 240,
+    "price": 80,
     "rating": 3.8,
     "reviewCount": 194,
     "languages": [
@@ -9836,7 +9836,7 @@ export const DOCTORS = [
     "specialty": "Neurología",
     "specialtyId": "sp-003",
     "experience": 21,
-    "price": 267,
+    "price": 80,
     "rating": 4,
     "reviewCount": 116,
     "languages": [
@@ -10282,7 +10282,7 @@ export const DOCTORS = [
     "specialty": "Pediatría",
     "specialtyId": "sp-004",
     "experience": 6,
-    "price": 317,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 81,
     "languages": [
@@ -10728,7 +10728,7 @@ export const DOCTORS = [
     "specialtyId": "sp-005",
     "subSpecialty": "Sub-especialidad en Ginecología",
     "experience": 17,
-    "price": 105,
+    "price": 80,
     "rating": 4.1,
     "reviewCount": 253,
     "languages": [
@@ -11174,7 +11174,7 @@ export const DOCTORS = [
     "specialtyId": "sp-006",
     "subSpecialty": "Sub-especialidad en Oftalmología",
     "experience": 12,
-    "price": 323,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 250,
     "languages": [
@@ -11623,7 +11623,7 @@ export const DOCTORS = [
     "specialty": "Traumatología",
     "specialtyId": "sp-007",
     "experience": 7,
-    "price": 244,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 14,
     "languages": [
@@ -12069,7 +12069,7 @@ export const DOCTORS = [
     "specialty": "Oncología",
     "specialtyId": "sp-008",
     "experience": 7,
-    "price": 267,
+    "price": 80,
     "rating": 4.5,
     "reviewCount": 187,
     "languages": [
@@ -12515,7 +12515,7 @@ export const DOCTORS = [
     "specialty": "Endocrinología",
     "specialtyId": "sp-009",
     "experience": 12,
-    "price": 256,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 240,
     "languages": [
@@ -12961,7 +12961,7 @@ export const DOCTORS = [
     "specialty": "Psiquiatría",
     "specialtyId": "sp-010",
     "experience": 13,
-    "price": 146,
+    "price": 80,
     "rating": 4.1,
     "reviewCount": 273,
     "languages": [
@@ -13409,7 +13409,7 @@ export const DOCTORS = [
     "specialtyId": "sp-011",
     "subSpecialty": "Sub-especialidad en Urología",
     "experience": 25,
-    "price": 236,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 144,
     "languages": [
@@ -13857,7 +13857,7 @@ export const DOCTORS = [
     "specialtyId": "sp-012",
     "subSpecialty": "Sub-especialidad en Gastroenterología",
     "experience": 3,
-    "price": 127,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 264,
     "languages": [
@@ -14302,7 +14302,7 @@ export const DOCTORS = [
     "specialty": "Neumología",
     "specialtyId": "sp-013",
     "experience": 3,
-    "price": 196,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 272,
     "languages": [
@@ -14748,7 +14748,7 @@ export const DOCTORS = [
     "specialty": "Reumatología",
     "specialtyId": "sp-014",
     "experience": 13,
-    "price": 165,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 57,
     "languages": [
@@ -15196,7 +15196,7 @@ export const DOCTORS = [
     "specialtyId": "sp-015",
     "subSpecialty": "Sub-especialidad en Nefrología",
     "experience": 18,
-    "price": 246,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 278,
     "languages": [
@@ -15643,7 +15643,7 @@ export const DOCTORS = [
     "specialty": "Hematología",
     "specialtyId": "sp-016",
     "experience": 23,
-    "price": 270,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 108,
     "languages": [
@@ -16088,7 +16088,7 @@ export const DOCTORS = [
     "specialty": "Infectología",
     "specialtyId": "sp-017",
     "experience": 27,
-    "price": 218,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 146,
     "languages": [
@@ -16535,7 +16535,7 @@ export const DOCTORS = [
     "specialty": "Medicina General",
     "specialtyId": "sp-018",
     "experience": 25,
-    "price": 171,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 113,
     "languages": [
@@ -16983,7 +16983,7 @@ export const DOCTORS = [
     "specialtyId": "sp-019",
     "subSpecialty": "Sub-especialidad en Otorrinolaringología",
     "experience": 16,
-    "price": 157,
+    "price": 80,
     "rating": 4.5,
     "reviewCount": 170,
     "languages": [
@@ -17430,7 +17430,7 @@ export const DOCTORS = [
     "specialty": "Cirugía General",
     "specialtyId": "sp-020",
     "experience": 13,
-    "price": 221,
+    "price": 80,
     "rating": 4,
     "reviewCount": 219,
     "languages": [
@@ -17877,7 +17877,7 @@ export const DOCTORS = [
     "specialty": "Cardiología",
     "specialtyId": "sp-001",
     "experience": 4,
-    "price": 226,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 183,
     "languages": [
@@ -18324,7 +18324,7 @@ export const DOCTORS = [
     "specialtyId": "sp-002",
     "subSpecialty": "Sub-especialidad en Dermatología",
     "experience": 12,
-    "price": 153,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 130,
     "languages": [
@@ -18771,7 +18771,7 @@ export const DOCTORS = [
     "specialty": "Neurología",
     "specialtyId": "sp-003",
     "experience": 26,
-    "price": 190,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 58,
     "languages": [
@@ -19219,7 +19219,7 @@ export const DOCTORS = [
     "specialtyId": "sp-004",
     "subSpecialty": "Sub-especialidad en Pediatría",
     "experience": 23,
-    "price": 155,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 268,
     "languages": [
@@ -19668,7 +19668,7 @@ export const DOCTORS = [
     "specialtyId": "sp-005",
     "subSpecialty": "Sub-especialidad en Ginecología",
     "experience": 14,
-    "price": 176,
+    "price": 80,
     "rating": 4.1,
     "reviewCount": 215,
     "languages": [
@@ -20116,7 +20116,7 @@ export const DOCTORS = [
     "specialty": "Oftalmología",
     "specialtyId": "sp-006",
     "experience": 4,
-    "price": 270,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 139,
     "languages": [
@@ -20563,7 +20563,7 @@ export const DOCTORS = [
     "specialtyId": "sp-007",
     "subSpecialty": "Sub-especialidad en Traumatología",
     "experience": 7,
-    "price": 187,
+    "price": 80,
     "rating": 4.3,
     "reviewCount": 177,
     "languages": [
@@ -21009,7 +21009,7 @@ export const DOCTORS = [
     "specialty": "Oncología",
     "specialtyId": "sp-008",
     "experience": 20,
-    "price": 312,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 189,
     "languages": [
@@ -21456,7 +21456,7 @@ export const DOCTORS = [
     "specialty": "Endocrinología",
     "specialtyId": "sp-009",
     "experience": 3,
-    "price": 334,
+    "price": 80,
     "rating": 4.5,
     "reviewCount": 166,
     "languages": [
@@ -21905,7 +21905,7 @@ export const DOCTORS = [
     "specialtyId": "sp-010",
     "subSpecialty": "Sub-especialidad en Psiquiatría",
     "experience": 18,
-    "price": 184,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 270,
     "languages": [
@@ -22354,7 +22354,7 @@ export const DOCTORS = [
     "specialtyId": "sp-011",
     "subSpecialty": "Sub-especialidad en Urología",
     "experience": 5,
-    "price": 105,
+    "price": 80,
     "rating": 3.8,
     "reviewCount": 195,
     "languages": [
@@ -22800,7 +22800,7 @@ export const DOCTORS = [
     "specialty": "Gastroenterología",
     "specialtyId": "sp-012",
     "experience": 3,
-    "price": 156,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 43,
     "languages": [
@@ -23246,7 +23246,7 @@ export const DOCTORS = [
     "specialty": "Neumología",
     "specialtyId": "sp-013",
     "experience": 23,
-    "price": 156,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 59,
     "languages": [
@@ -23693,7 +23693,7 @@ export const DOCTORS = [
     "specialty": "Reumatología",
     "specialtyId": "sp-014",
     "experience": 14,
-    "price": 290,
+    "price": 80,
     "rating": 4.2,
     "reviewCount": 103,
     "languages": [
@@ -24140,7 +24140,7 @@ export const DOCTORS = [
     "specialtyId": "sp-015",
     "subSpecialty": "Sub-especialidad en Nefrología",
     "experience": 24,
-    "price": 107,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 254,
     "languages": [
@@ -24587,7 +24587,7 @@ export const DOCTORS = [
     "specialty": "Hematología",
     "specialtyId": "sp-016",
     "experience": 28,
-    "price": 82,
+    "price": 80,
     "rating": 4.3,
     "reviewCount": 255,
     "languages": [
@@ -25034,7 +25034,7 @@ export const DOCTORS = [
     "specialtyId": "sp-017",
     "subSpecialty": "Sub-especialidad en Infectología",
     "experience": 29,
-    "price": 251,
+    "price": 80,
     "rating": 4.5,
     "reviewCount": 132,
     "languages": [
@@ -25479,7 +25479,7 @@ export const DOCTORS = [
     "specialty": "Medicina General",
     "specialtyId": "sp-018",
     "experience": 24,
-    "price": 293,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 36,
     "languages": [
@@ -25925,7 +25925,7 @@ export const DOCTORS = [
     "specialty": "Otorrinolaringología",
     "specialtyId": "sp-019",
     "experience": 15,
-    "price": 175,
+    "price": 80,
     "rating": 4.9,
     "reviewCount": 43,
     "languages": [
@@ -26371,7 +26371,7 @@ export const DOCTORS = [
     "specialtyId": "sp-020",
     "subSpecialty": "Sub-especialidad en Cirugía General",
     "experience": 5,
-    "price": 269,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 31,
     "languages": [
@@ -26817,7 +26817,7 @@ export const DOCTORS = [
     "specialty": "Cardiología",
     "specialtyId": "sp-001",
     "experience": 5,
-    "price": 181,
+    "price": 80,
     "rating": 5,
     "reviewCount": 111,
     "languages": [
@@ -27264,7 +27264,7 @@ export const DOCTORS = [
     "specialty": "Dermatología",
     "specialtyId": "sp-002",
     "experience": 24,
-    "price": 102,
+    "price": 80,
     "rating": 4.3,
     "reviewCount": 221,
     "languages": [
@@ -27713,7 +27713,7 @@ export const DOCTORS = [
     "specialtyId": "sp-003",
     "subSpecialty": "Sub-especialidad en Neurología",
     "experience": 6,
-    "price": 83,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 138,
     "languages": [
@@ -28159,7 +28159,7 @@ export const DOCTORS = [
     "specialty": "Pediatría",
     "specialtyId": "sp-004",
     "experience": 21,
-    "price": 238,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 270,
     "languages": [
@@ -28606,7 +28606,7 @@ export const DOCTORS = [
     "specialtyId": "sp-005",
     "subSpecialty": "Sub-especialidad en Ginecología",
     "experience": 9,
-    "price": 83,
+    "price": 80,
     "rating": 5,
     "reviewCount": 272,
     "languages": [
@@ -29055,7 +29055,7 @@ export const DOCTORS = [
     "specialty": "Oftalmología",
     "specialtyId": "sp-006",
     "experience": 30,
-    "price": 230,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 272,
     "languages": [
@@ -29502,7 +29502,7 @@ export const DOCTORS = [
     "specialtyId": "sp-007",
     "subSpecialty": "Sub-especialidad en Traumatología",
     "experience": 15,
-    "price": 238,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 254,
     "languages": [
@@ -29949,7 +29949,7 @@ export const DOCTORS = [
     "specialty": "Oncología",
     "specialtyId": "sp-008",
     "experience": 27,
-    "price": 248,
+    "price": 80,
     "rating": 4.3,
     "reviewCount": 86,
     "languages": [
@@ -30398,7 +30398,7 @@ export const DOCTORS = [
     "specialtyId": "sp-009",
     "subSpecialty": "Sub-especialidad en Endocrinología",
     "experience": 19,
-    "price": 344,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 277,
     "languages": [
@@ -30845,7 +30845,7 @@ export const DOCTORS = [
     "specialty": "Psiquiatría",
     "specialtyId": "sp-010",
     "experience": 25,
-    "price": 124,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 257,
     "languages": [
@@ -31295,7 +31295,7 @@ export const DOCTORS = [
     "specialtyId": "sp-011",
     "subSpecialty": "Sub-especialidad en Urología",
     "experience": 20,
-    "price": 332,
+    "price": 80,
     "rating": 4.3,
     "reviewCount": 244,
     "languages": [
@@ -31743,7 +31743,7 @@ export const DOCTORS = [
     "specialtyId": "sp-012",
     "subSpecialty": "Sub-especialidad en Gastroenterología",
     "experience": 25,
-    "price": 120,
+    "price": 80,
     "rating": 5,
     "reviewCount": 171,
     "languages": [
@@ -32191,7 +32191,7 @@ export const DOCTORS = [
     "specialtyId": "sp-013",
     "subSpecialty": "Sub-especialidad en Neumología",
     "experience": 26,
-    "price": 192,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 85,
     "languages": [
@@ -32637,7 +32637,7 @@ export const DOCTORS = [
     "specialty": "Reumatología",
     "specialtyId": "sp-014",
     "experience": 30,
-    "price": 230,
+    "price": 80,
     "rating": 5,
     "reviewCount": 218,
     "languages": [
@@ -33084,7 +33084,7 @@ export const DOCTORS = [
     "specialty": "Nefrología",
     "specialtyId": "sp-015",
     "experience": 15,
-    "price": 338,
+    "price": 80,
     "rating": 4,
     "reviewCount": 175,
     "languages": [
@@ -33531,7 +33531,7 @@ export const DOCTORS = [
     "specialty": "Hematología",
     "specialtyId": "sp-016",
     "experience": 13,
-    "price": 261,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 151,
     "languages": [
@@ -33980,7 +33980,7 @@ export const DOCTORS = [
     "specialtyId": "sp-017",
     "subSpecialty": "Sub-especialidad en Infectología",
     "experience": 18,
-    "price": 317,
+    "price": 80,
     "rating": 4.5,
     "reviewCount": 120,
     "languages": [
@@ -34426,7 +34426,7 @@ export const DOCTORS = [
     "specialty": "Medicina General",
     "specialtyId": "sp-018",
     "experience": 20,
-    "price": 137,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 48,
     "languages": [
@@ -34873,7 +34873,7 @@ export const DOCTORS = [
     "specialtyId": "sp-019",
     "subSpecialty": "Sub-especialidad en Otorrinolaringología",
     "experience": 13,
-    "price": 325,
+    "price": 80,
     "rating": 4.3,
     "reviewCount": 105,
     "languages": [
@@ -35321,7 +35321,7 @@ export const DOCTORS = [
     "specialty": "Cirugía General",
     "specialtyId": "sp-020",
     "experience": 20,
-    "price": 337,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 51,
     "languages": [
@@ -35767,7 +35767,7 @@ export const DOCTORS = [
     "specialty": "Cardiología",
     "specialtyId": "sp-001",
     "experience": 15,
-    "price": 213,
+    "price": 80,
     "rating": 5,
     "reviewCount": 100,
     "languages": [
@@ -36213,7 +36213,7 @@ export const DOCTORS = [
     "specialtyId": "sp-002",
     "subSpecialty": "Sub-especialidad en Dermatología",
     "experience": 6,
-    "price": 121,
+    "price": 80,
     "rating": 4,
     "reviewCount": 49,
     "languages": [
@@ -36658,7 +36658,7 @@ export const DOCTORS = [
     "specialty": "Neurología",
     "specialtyId": "sp-003",
     "experience": 28,
-    "price": 260,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 58,
     "languages": [
@@ -37106,7 +37106,7 @@ export const DOCTORS = [
     "specialty": "Pediatría",
     "specialtyId": "sp-004",
     "experience": 10,
-    "price": 104,
+    "price": 80,
     "rating": 4,
     "reviewCount": 44,
     "languages": [
@@ -37554,7 +37554,7 @@ export const DOCTORS = [
     "specialtyId": "sp-005",
     "subSpecialty": "Sub-especialidad en Ginecología",
     "experience": 17,
-    "price": 90,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 227,
     "languages": [
@@ -38003,7 +38003,7 @@ export const DOCTORS = [
     "specialtyId": "sp-006",
     "subSpecialty": "Sub-especialidad en Oftalmología",
     "experience": 28,
-    "price": 155,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 228,
     "languages": [
@@ -38452,7 +38452,7 @@ export const DOCTORS = [
     "specialtyId": "sp-007",
     "subSpecialty": "Sub-especialidad en Traumatología",
     "experience": 13,
-    "price": 247,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 111,
     "languages": [
@@ -38900,7 +38900,7 @@ export const DOCTORS = [
     "specialty": "Oncología",
     "specialtyId": "sp-008",
     "experience": 10,
-    "price": 322,
+    "price": 80,
     "rating": 4.7,
     "reviewCount": 149,
     "languages": [
@@ -39348,7 +39348,7 @@ export const DOCTORS = [
     "specialtyId": "sp-009",
     "subSpecialty": "Sub-especialidad en Endocrinología",
     "experience": 17,
-    "price": 152,
+    "price": 80,
     "rating": 4.1,
     "reviewCount": 113,
     "languages": [
@@ -39794,7 +39794,7 @@ export const DOCTORS = [
     "specialty": "Psiquiatría",
     "specialtyId": "sp-010",
     "experience": 12,
-    "price": 321,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 171,
     "languages": [
@@ -40241,7 +40241,7 @@ export const DOCTORS = [
     "specialtyId": "sp-011",
     "subSpecialty": "Sub-especialidad en Urología",
     "experience": 5,
-    "price": 239,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 212,
     "languages": [
@@ -40686,7 +40686,7 @@ export const DOCTORS = [
     "specialty": "Gastroenterología",
     "specialtyId": "sp-012",
     "experience": 13,
-    "price": 234,
+    "price": 80,
     "rating": 4.6,
     "reviewCount": 107,
     "languages": [
@@ -41133,7 +41133,7 @@ export const DOCTORS = [
     "specialtyId": "sp-013",
     "subSpecialty": "Sub-especialidad en Neumología",
     "experience": 5,
-    "price": 146,
+    "price": 80,
     "rating": 4,
     "reviewCount": 55,
     "languages": [
@@ -41582,7 +41582,7 @@ export const DOCTORS = [
     "specialtyId": "sp-014",
     "subSpecialty": "Sub-especialidad en Reumatología",
     "experience": 28,
-    "price": 222,
+    "price": 80,
     "rating": 3.9,
     "reviewCount": 122,
     "languages": [
@@ -42030,7 +42030,7 @@ export const DOCTORS = [
     "specialty": "Nefrología",
     "specialtyId": "sp-015",
     "experience": 30,
-    "price": 301,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 81,
     "languages": [
@@ -42476,7 +42476,7 @@ export const DOCTORS = [
     "specialty": "Hematología",
     "specialtyId": "sp-016",
     "experience": 18,
-    "price": 155,
+    "price": 80,
     "rating": 4.5,
     "reviewCount": 218,
     "languages": [
@@ -42924,7 +42924,7 @@ export const DOCTORS = [
     "specialtyId": "sp-017",
     "subSpecialty": "Sub-especialidad en Infectología",
     "experience": 17,
-    "price": 111,
+    "price": 80,
     "rating": 4.1,
     "reviewCount": 176,
     "languages": [
@@ -43371,7 +43371,7 @@ export const DOCTORS = [
     "specialty": "Medicina General",
     "specialtyId": "sp-018",
     "experience": 16,
-    "price": 94,
+    "price": 80,
     "rating": 4.4,
     "reviewCount": 102,
     "languages": [
@@ -43819,7 +43819,7 @@ export const DOCTORS = [
     "specialtyId": "sp-019",
     "subSpecialty": "Sub-especialidad en Otorrinolaringología",
     "experience": 12,
-    "price": 149,
+    "price": 80,
     "rating": 4.8,
     "reviewCount": 195,
     "languages": [
@@ -44267,7 +44267,7 @@ export const DOCTORS = [
     "specialtyId": "sp-020",
     "subSpecialty": "Sub-especialidad en Cirugía General",
     "experience": 14,
-    "price": 331,
+    "price": 80,
     "rating": 4.2,
     "reviewCount": 235,
     "languages": [

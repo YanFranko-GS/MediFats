@@ -31,7 +31,7 @@ export function Navbar() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { user, isAuthenticated, logout, switchRole } = useAuthStore();
-  const { theme, setTheme, language, setLanguage } = useUIStore();
+  const { theme, setTheme, language, setLanguage, fontSize, setFontSize } = useUIStore();
   const isTop = useScrollTop();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -98,7 +98,33 @@ export function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2">
 
-
+          {/* Text Size Accessibility */}
+          <div className="hidden sm:flex items-center bg-surface-100 dark:bg-slate-800 rounded-lg p-0.5" aria-label="Tamaño de texto">
+            <button
+              onClick={() => {
+                const sizes = ['sm', 'md', 'lg', 'xl'] as const;
+                const currentIndex = sizes.indexOf(fontSize);
+                if (currentIndex > 0) setFontSize(sizes[currentIndex - 1]);
+              }}
+              disabled={fontSize === 'sm'}
+              className="px-2.5 py-1 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-colors disabled:opacity-50"
+              aria-label="Disminuir texto"
+            >
+              A-
+            </button>
+            <button
+              onClick={() => {
+                const sizes = ['sm', 'md', 'lg', 'xl'] as const;
+                const currentIndex = sizes.indexOf(fontSize);
+                if (currentIndex < sizes.length - 1) setFontSize(sizes[currentIndex + 1]);
+              }}
+              disabled={fontSize === 'xl'}
+              className="px-2.5 py-1 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-colors disabled:opacity-50"
+              aria-label="Aumentar texto"
+            >
+              A+
+            </button>
+          </div>
           {/* Theme toggle */}
           <button
             onClick={cycleTheme}
@@ -199,6 +225,35 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          
+          {/* Mobile Text Size */}
+          <div className="pt-2 pb-1 border-t border-surface-200 dark:border-slate-800 mt-2">
+            <p className="px-3 text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wider">Tamaño de texto</p>
+            <div className="flex gap-2 px-3">
+              <button
+                onClick={() => {
+                  const sizes = ['sm', 'md', 'lg', 'xl'] as const;
+                  const currentIndex = sizes.indexOf(fontSize);
+                  if (currentIndex > 0) setFontSize(sizes[currentIndex - 1]);
+                }}
+                disabled={fontSize === 'sm'}
+                className="flex-1 py-2 text-sm font-semibold text-slate-600 dark:text-slate-400 bg-surface-100 dark:bg-slate-800 hover:bg-surface-200 dark:hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-50"
+              >
+                A-
+              </button>
+              <button
+                onClick={() => {
+                  const sizes = ['sm', 'md', 'lg', 'xl'] as const;
+                  const currentIndex = sizes.indexOf(fontSize);
+                  if (currentIndex < sizes.length - 1) setFontSize(sizes[currentIndex + 1]);
+                }}
+                disabled={fontSize === 'xl'}
+                className="flex-1 py-2 text-sm font-semibold text-slate-600 dark:text-slate-400 bg-surface-100 dark:bg-slate-800 hover:bg-surface-200 dark:hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-50"
+              >
+                A+
+              </button>
+            </div>
+          </div>
 
         </div>
       )}

@@ -5,23 +5,97 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: #10b981;
+    --color-primary-hover: #059669;
+    --color-secondary: #3b82f6;
+    --color-secondary-hover: #2563eb;
+    
+    --color-bg: #f8fafc;
+    --color-text: #1e293b;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-input: #ffffff;
+    --color-input-border: #cbd5e1;
+  }
+  
+  .dark {
+    --color-primary: #2deda0;
+    --color-primary-hover: #10b981;
+    --color-secondary: #60aaff;
+    --color-secondary-hover: #3b82f6;
+    
+    --color-bg: #0d1117;
+    --color-text: #f0f6fc;
+    --color-surface: #161b22;
+    --color-surface-hover: #21262d;
+    --color-border: #30363d;
+    --color-input: #21262d;
+    --color-input-border: #30363d;
+  }
+
   html { font-size: 16px; scroll-behavior: smooth; }
-  body { @apply bg-surface-50 text-slate-800 font-body antialiased; }
-  .dark body { @apply bg-slate-950 text-slate-100; }
-  h1, h2, h3, h4, h5, h6 { @apply font-heading; }
+  body { 
+    background-color: var(--color-bg); 
+    color: var(--color-text); 
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; }
 }
 
 @layer components {
-  .card { @apply bg-white dark:bg-slate-900 rounded-xl border border-surface-200 dark:border-slate-800 shadow-card; }
+  .card { 
+    background-color: var(--color-surface); 
+    border: 1px solid var(--color-border);
+    @apply rounded-xl shadow-card; 
+  }
   .card-hover { @apply transition-all duration-200 hover:shadow-card-md hover:-translate-y-0.5; }
-  .btn-primary { @apply bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg px-4 py-2.5 transition-all duration-150 shadow-primary hover:shadow-lg active:scale-95; }
-  .btn-secondary { @apply bg-secondary-500 hover:bg-secondary-600 text-white font-medium rounded-lg px-4 py-2.5 transition-all duration-150; }
+  
+  .btn-primary { 
+    background-color: var(--color-primary); 
+    color: #ffffff; 
+    @apply font-medium rounded-lg px-4 py-2.5 transition-all duration-150 shadow-primary hover:shadow-lg active:scale-95; 
+  }
+  .dark .btn-primary { color: #0d1117; font-weight: 600; }
+  .btn-primary:hover { background-color: var(--color-primary-hover); }
+  
+  .btn-secondary { 
+    background-color: var(--color-secondary); 
+    color: #ffffff; 
+    @apply font-medium rounded-lg px-4 py-2.5 transition-all duration-150; 
+  }
+  .dark .btn-secondary { color: #0d1117; font-weight: 600; }
+  .btn-secondary:hover { background-color: var(--color-secondary-hover); }
+  
   .btn-ghost { @apply bg-transparent text-slate-700 dark:text-slate-300 font-medium rounded-lg px-4 py-2.5 transition-all duration-150; }
-  .btn-outline { @apply border border-primary-600 text-primary-600 font-medium rounded-lg px-4 py-2.5 transition-all duration-150; }
-  .input-base { @apply w-full px-3.5 py-2.5 rounded-lg border border-surface-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-150 text-sm; }
+  .btn-outline { 
+    border: 1px solid var(--color-primary); 
+    color: var(--color-primary); 
+    @apply font-medium rounded-lg px-4 py-2.5 transition-all duration-150; 
+  }
+  
+  .input-base { 
+    background-color: var(--color-input);
+    border: 1px solid var(--color-input-border);
+    color: var(--color-text);
+    @apply w-full px-3.5 py-2.5 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-150 text-sm; 
+  }
+  .input-base:focus {
+    --tw-ring-color: var(--color-primary);
+  }
+  
   .label-base { @apply block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5; }
+  
   .sidebar-link { @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 transition-all duration-150 text-sm font-medium; }
-  .sidebar-link-active { @apply bg-primary-50 dark:bg-slate-800 text-primary-700 dark:text-primary-400; }
+  .sidebar-link-active { 
+    background-color: rgba(16, 185, 129, 0.1); /* Primary with opacity */
+    color: var(--color-primary);
+  }
+  .dark .sidebar-link-active {
+    background-color: var(--color-surface-hover);
+    color: var(--color-primary);
+  }
 }
 
 .high-contrast { filter: contrast(1.5); }

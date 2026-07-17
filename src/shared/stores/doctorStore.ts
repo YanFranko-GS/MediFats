@@ -84,7 +84,7 @@ export const useDoctorStore = create<DoctorStore>()(
         specialty: 'Cardiología',
         experience: 15,
         bio: 'Especialista en Cardiología con 15 años de experiencia. Egresado de la UNMSM. Certificado por la Sociedad Peruana de Cardiología.',
-        price: 150,
+        price: 80,
         languages: ['Español', 'Inglés'],
         modes: ['in-person', 'video'],
         certifications: ['Cardiología Clínica – UNMSM', 'ACLS – AHA', 'Ecocardiografía – SPC'],
