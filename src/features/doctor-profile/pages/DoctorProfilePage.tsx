@@ -12,8 +12,9 @@ import { useAuthStore } from '../../../shared/stores/authStore';
 import { Skeleton, Avatar } from '../../../shared/components/atoms/index';
 import { ErrorState } from '../../../shared/components/molecules/StatusComponents';
 import { Modal } from '../../../shared/components/molecules/CardModal';
-import { cn, formatCurrency, formatRelative } from '../../../shared/utils';
+import { cn, formatCurrency, formatRelative, getPriceBySpecialty } from '../../../shared/utils';
 import { toast } from 'sonner';
+import { CheckoutModal } from '../components/CheckoutModal';
 
 const MODE_ICONS: Record<string, React.ReactNode> = {
   'in-person': <Building2 className="h-4 w-4"/>,
@@ -43,6 +44,7 @@ export default function DoctorProfilePage() {
   const [selectedMode, setSelectedMode] = useState<'in-person'|'video'|'chat'>('in-person');
   const [bookingOpen, setBookingOpen] = useState(false);
   const [weekOffset, setWeekOffset] = useState(0);
+  const [isValidating, setIsValidating] = useState(false);
 
   const { data: doctor, isLoading, isError, refetch } = useDoctor(id);
   const { data: reviewData } = useDoctorReviews(id);
@@ -51,14 +53,35 @@ export default function DoctorProfilePage() {
 
   const weekDays = generateWeekDays().map((d, i) => addDays(d, weekOffset * 7));
 
-  const handleBookNow = () => {
+  const handleBookNow = async () => {
     if (!isAuthenticated) {
       toast.info('Inicia sesión para reservar una cita');
       navigate('/login');
       return;
     }
     if (!selectedTime) { toast.error('Selecciona un horario'); return; }
+    
     if (doctor) {
+      setIsValidating(true);
+      try {
+        const { appointmentService } = await import('../../../shared/services/appointmentService');
+        const patientAppointments = await appointmentService.getByPatient(user!.id);
+        
+        const targetDateStr = format(selectedDate, 'yyyy-MM-dd');
+        const hasConflict = patientAppointments.some(
+          appt => appt.date === targetDateStr && appt.time === selectedTime && !['cancelled', 'no-show', 'completed'].includes(appt.status)
+        );
+        
+        if (hasConflict) {
+          toast.error('Horario no disponible', { description: 'Ya tienes otra cita agendada exactamente a esta misma fecha y hora.' });
+          setIsValidating(false);
+          return;
+        }
+      } catch (e) {
+        console.error(e);
+      }
+      setIsValidating(false);
+
       setDoctor(doctor as any);
       setDate(format(selectedDate, 'yyyy-MM-dd'));
       setTime(selectedTime);
@@ -67,9 +90,13 @@ export default function DoctorProfilePage() {
     }
   };
 
-  const handleConfirmBooking = async () => {
+  const handleConfirmBooking = async (paymentMethod: string) => {
     try {
       const { appointmentService } = await import('../../../shared/services/appointmentService');
+      const { doctorService } = await import('../../../shared/services/doctorService');
+      const status = paymentMethod === 'transfer' ? 'pending_approval' : 'scheduled';
+      const price = getPriceBySpecialty(doctor!.specialty);
+
       await appointmentService.create({
         patientId: user!.id,
         patientName: user!.name,
@@ -81,11 +108,14 @@ export default function DoctorProfilePage() {
         date: format(selectedDate, 'yyyy-MM-dd'),
         time: selectedTime!,
         duration: 30,
-        status: 'scheduled',
+        status: status as any,
         mode: selectedMode,
         reason: 'Consulta médica',
-        price: doctor!.price,
+        price: price,
       });
+
+      await doctorService.blockDoctorSlot(doctor!.id, format(selectedDate, 'yyyy-MM-dd'), selectedTime!);
+
       queryClient.invalidateQueries({ queryKey: ['appointments'] });
       setBookingOpen(false);
       toast.success('¡Cita reservada con éxito!', { description: `${doctor!.name} · ${format(selectedDate,'dd MMM',{locale:es})} ${selectedTime}` });
@@ -110,7 +140,7 @@ export default function DoctorProfilePage() {
     <>
       <Helmet>
         <title>{doctor.name} – {doctor.specialty} | CLÍNICA FAST</title>
-        <meta name="description" content={`Reserva una cita con ${doctor.name}, especialista en ${doctor.specialty} con ${doctor.experience} años de experiencia.`} />
+        <meta name="description" content={`Reserva una cita con ${doctor.name}, especialista en ${doctor.specialty}.`} />
         <script type="application/ld+json">{JSON.stringify({
           "@context":"https://schema.org","@type":"Person",
           "name":doctor.name,"jobTitle":`Médico especialista en ${doctor.specialty}`,
@@ -147,7 +177,7 @@ export default function DoctorProfilePage() {
                       {doctor.subSpecialty && <p className="text-sm text-slate-500">{doctor.subSpecialty}</p>}
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold font-data text-slate-800 dark:text-slate-100">{formatCurrency(doctor.price)}</p>
+                      <p className="text-2xl font-bold font-data text-slate-800 dark:text-slate-100">{formatCurrency(getPriceBySpecialty(doctor.specialty))}</p>
                       <p className="text-xs text-slate-400">por consulta</p>
                     </div>
                   </div>
@@ -157,10 +187,6 @@ export default function DoctorProfilePage() {
                       <Star className="h-4 w-4 text-amber-400 fill-amber-400"/>
                       <span className="font-semibold">{doctor.rating}</span>
                       <span className="text-slate-400">({doctor.reviewCount} reseñas)</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-sm text-slate-600 dark:text-slate-400">
-                      <Clock className="h-4 w-4 text-slate-400"/>
-                      {doctor.experience} años de experiencia
                     </div>
                     <div className="flex items-center gap-1.5 text-sm text-slate-600 dark:text-slate-400">
                       <MapPin className="h-4 w-4 text-slate-400"/>
@@ -324,66 +350,31 @@ export default function DoctorProfilePage() {
                     {format(selectedDate,'EEEE dd MMM',{locale:es})} · {selectedTime}
                   </p>
                   <p className="text-primary-600 dark:text-primary-500 text-xs mt-0.5">
-                    {MODE_LABELS[selectedMode]} · {formatCurrency(doctor.price)}
+                    {MODE_LABELS[selectedMode]} · {formatCurrency(getPriceBySpecialty(doctor.specialty))}
                   </p>
                 </div>
               )}
 
-              <button onClick={handleBookNow}
-                className="w-full btn-primary py-3 flex items-center justify-center gap-2">
-                {isAuthenticated ? 'Confirmar cita' : 'Iniciar sesión para reservar'}
+              <button onClick={handleBookNow} disabled={isValidating}
+                className="w-full btn-primary py-3 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-wait">
+                {isValidating ? (
+                  <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/> Validando...</>
+                ) : isAuthenticated ? 'Confirmar cita' : 'Iniciar sesión para reservar'}
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Booking confirm modal */}
-      <Modal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} title="Confirmar reserva" size="sm"
-        footer={
-          <>
-            <button onClick={() => setBookingOpen(false)} className="btn-ghost text-sm px-4 py-2">Cancelar</button>
-            <button onClick={handleConfirmBooking} className="btn-primary text-sm px-4 py-2">Confirmar cita</button>
-          </>
-        }>
-        <div className="space-y-3">
-          <div className="flex items-center gap-3 p-3 bg-surface-50 dark:bg-slate-800 rounded-xl">
-            <img src={doctor?.avatar} alt={doctor?.name} className="w-12 h-12 rounded-xl bg-primary-50"/>
-            <div>
-              <p className="font-semibold text-slate-800 dark:text-slate-100 text-sm">{doctor?.name}</p>
-              <p className="text-xs text-primary-600">{doctor?.specialty}</p>
-            </div>
-          </div>
-          {[
-            {l:'Fecha',v:format(selectedDate,'EEEE dd MMMM yyyy',{locale:es})},
-            {l:'Hora',v:selectedTime||''},
-            {l:'Modalidad',v:MODE_LABELS[selectedMode]},
-            {l:'Precio',v:formatCurrency(doctor?.price||0)},
-          ].map(({l,v})=>(
-            <div key={l} className="flex justify-between items-center text-sm">
-              <span className="text-slate-500">{l}</span>
-              <span className="font-medium text-slate-800 dark:text-slate-100 capitalize text-right">{v}</span>
-            </div>
-          ))}
-          
-          <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30 rounded-xl">
-            <div className="flex items-start gap-2">
-              <div className="shrink-0 mt-0.5">
-                <svg className="h-4 w-4 text-red-600 dark:text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </div>
-              <div className="text-xs text-red-800 dark:text-red-300">
-                <p className="font-bold mb-0.5">Atención: No hay devoluciones</p>
-                <p>Una vez pagada y registrada la cita, no se podrán realizar devoluciones ni reembolsos bajo ninguna circunstancia.</p>
-                <a href="/politicas-devolucion.pdf" target="_blank" className="inline-block mt-1.5 text-red-700 dark:text-red-400 font-semibold underline hover:text-red-900">
-                  Ver política completa de devoluciones (PDF)
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Modal>
+      <CheckoutModal
+        isOpen={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        onConfirm={handleConfirmBooking}
+        doctor={doctor}
+        selectedDate={selectedDate}
+        selectedTime={selectedTime!}
+        selectedMode={selectedMode}
+      />
     </>
   );
 }

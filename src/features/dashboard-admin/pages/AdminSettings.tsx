@@ -165,6 +165,15 @@ export default function AdminSettings() {
               <SettingRow label="Pago anticipado obligatorio" desc="Requiere pago para confirmar la reserva">
                 <Toggle value={settings.appointments.requirePaymentUpfront} onChange={v => upd('appointments', { requirePaymentUpfront: v })}/>
               </SettingRow>
+              <div className="mt-4 pt-4 border-t border-surface-100 dark:border-slate-800">
+                <h4 className="font-semibold text-slate-800 dark:text-slate-100 mb-4">Horarios Operativos de la Clínica</h4>
+                <SettingRow label="Hora de apertura">
+                  <TextInput value={(settings.appointments as any).openTime || '08:00'} onChange={v => upd('appointments', { openTime: v })} placeholder="08:00"/>
+                </SettingRow>
+                <SettingRow label="Hora de cierre">
+                  <TextInput value={(settings.appointments as any).closeTime || '20:00'} onChange={v => upd('appointments', { closeTime: v })} placeholder="20:00"/>
+                </SettingRow>
+              </div>
             </div>
           )}
 

@@ -105,4 +105,21 @@ export const doctorService = {
       return availability.slots;
     }, { delay: 500 })).data;
   },
+
+  async blockDoctorSlot(doctorId: string, date: string, time: string): Promise<boolean> {
+    return (await apiClient(() => {
+      const doctor = ALL_DOCTORS.find((d) => d.id === doctorId);
+      if (!doctor) return false;
+      const dayOfWeek = new Date(date).getDay();
+      const availability = doctor.availability.find((a) => a.day === dayOfWeek);
+      if (!availability) return false;
+      
+      const slot = availability.slots.find(s => s.time === time);
+      if (slot) {
+        slot.isBooked = true;
+        return true;
+      }
+      return false;
+    })).data;
+  },
 };

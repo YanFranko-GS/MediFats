@@ -8,7 +8,7 @@ import { useDoctors, useSpecialties } from '../../../shared/hooks/useDoctors';
 import { usePatientStore } from '../../../shared/stores/patientStore';
 import { SkeletonCard, AvatarImg } from '../../../shared/components/atoms/index';
 import { EmptySearch, ErrorState, PageHeader } from '../../../shared/components/molecules/StatusComponents';
-import { cn, formatCurrency } from '../../../shared/utils';
+import { cn, formatCurrency, getPriceBySpecialty } from '../../../shared/utils';
 import type { DoctorFilters } from '../../../shared/types';
 
 export default function PatientFindDoctors() {
@@ -81,7 +81,6 @@ export default function PatientFindDoctors() {
             <select value={filters.sortBy || 'rating'} onChange={e => { setFilters(f => ({ ...f, sortBy: e.target.value as any })); setPage(1); }} className="input-base text-xs py-2">
               <option value="rating">Mejor rating</option>
               <option value="price">Menor precio</option>
-              <option value="experience">Más experiencia</option>
             </select>
           </div>
         )}
@@ -110,7 +109,6 @@ export default function PatientFindDoctors() {
                     <div className="flex-1 min-w-0 pr-6">
                       <p className="font-semibold text-slate-800 dark:text-slate-100 text-sm truncate group-hover:text-primary-600 transition-colors">{doc.name}</p>
                       <p className="text-xs text-primary-600 dark:text-primary-400">{doc.specialty}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{doc.experience} años exp.</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-1 mb-2">
@@ -118,7 +116,7 @@ export default function PatientFindDoctors() {
                     <span className="text-xs text-slate-400 ml-1">{doc.rating} ({doc.reviewCount})</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <div><p className="text-xs text-slate-400">desde</p><p className="font-bold text-slate-800 dark:text-slate-100 text-sm">{formatCurrency(doc.price)}</p></div>
+                    <div><p className="text-xs text-slate-400">desde</p><p className="font-bold text-slate-800 dark:text-slate-100 text-sm">{formatCurrency(getPriceBySpecialty(doc.specialty))}</p></div>
                     <span className={cn('text-xs font-medium px-2 py-1 rounded-full', doc.isAvailable ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-slate-100 text-slate-500 dark:bg-slate-800')}>
                       {doc.isAvailable ? <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500"/>Disponible</span> : <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-slate-400"/>Ocupado</span>}
                     </span>

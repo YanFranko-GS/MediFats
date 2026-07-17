@@ -41,6 +41,27 @@ export function formatCurrency(amount: number, currency = 'PEN'): string {
   }).format(amount);
 }
 
+export const SPECIALTY_PRICES: Record<string, number> = {
+  'Cardiología': 80,
+  'Dermatología': 80,
+  'Neurología': 80,
+  'Pediatría': 80,
+  'Ginecología': 80,
+  'Traumatología': 80,
+  'Endocrinología': 80,
+  'Medicina General': 80,
+  'Gastroenterología': 80,
+  'Psiquiatría': 80,
+  'Oftalmología': 80,
+  'Oncología': 80,
+  'Neumología': 80,
+  'Urología': 80,
+};
+
+export function getPriceBySpecialty(specialty: string): number {
+  return 80; // Precio fijo para absolutamente todo
+}
+
 // ─── NUMBERS ─────────────────────────────────────────────────────────────────
 export function formatNumber(n: number): string {
   return new Intl.NumberFormat('es-PE').format(n);
